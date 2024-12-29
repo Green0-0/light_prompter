@@ -2,7 +2,8 @@
 Inspired by [optillm](https://github.com/codelion/optillm), Light Prompter is a Python framework for efficiently batching responses with prompting strategies that include multiple steps. This means that if you use an inference engine such as VLLM, you can get speedups of several magnitudes.
 
 It works through a set of Responders, each of which acts as a state machine containing nested responders. Responders request a chat completion, which gets aggregated with all other chat completions so that they can be solved in one batch. Aftewards, these chat completions are sent back down to the responders.
-Here's a diagram illustrating this process:
+Here's a diagram illustrating this process for something like self-consistency:
+
 ![diagram](https://github.com/user-attachments/assets/909eb3c1-bbf5-4e90-b72c-9565cae52147)
 
 ## Quick Start:
