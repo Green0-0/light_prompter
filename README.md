@@ -3,7 +3,7 @@ Inspired by [optillm](https://github.com/codelion/optillm), Light Prompter is a 
 
 It works through a set of Responders, each of which acts as a state machine that also contain nested responders. Responders request a chat completion, which gets aggregated with all other chat completions so that they can be solved in one batch. Aftewards, these chat completions are sent back down to the responders.
 Here's a diagram illustrating this process:
-![diagram](https://github.com/user-attachments/assets/8836c19a-c55d-4b7d-8373-d4b1428be9eb)
+![diagram](https://github.com/user-attachments/assets/909eb3c1-bbf5-4e90-b72c-9565cae52147)
 
 ## Quick Start:
 Use one of the following Kaggle notebooks:
