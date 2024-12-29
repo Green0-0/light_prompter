@@ -38,7 +38,7 @@ Here are all the responders you can use:
 
 All responders return a response which contain a verbose_output, an output, and an answer. The answer is the shortest specific answer, the output is the standard LLM output and the verbose_output contains all the steps taken.
 
-Within ``sane_defaults.py`` you will find starter prompts (a basic COT prompt, the aggregator prompt used for MOA, a prompt that makes the aggregator choose the best response, a critique prompt, a rewriting prompt) and some answer extractors (which take in a string and try to "extract" the LLM's answer). Note that you can pass in answer extractor to most responders to make sure to parse the answer out. This is important! Some strategies like self-consistency rely on having a properly parsed answer.
+Within ``sane_defaults.py`` you will find starter prompts (a basic COT prompt, the aggregator prompt used for MOA, a prompt that makes the aggregator choose the best response, a critique prompt, a rewriting prompt) and some answer extractors (which take in a string and try to "extract" the LLM's answer). Note that you can pass in answer extractor to most responders to try to parse the answer out. This is important! Some strategies like self-consistency rely on having a properly parsed answer.
 
 After you have built a tree of responders, use the execute function from ``responders.py`` on the root. Make sure you have a model setup, the default in ``model.py`` is openAI compatible and thus will work with any local inference engine but is slow. The vllm variant is much preferred. You can also implement your own.
 
