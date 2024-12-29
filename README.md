@@ -10,12 +10,12 @@ Here's a diagram illustrating this process for something like self-consistency:
 ## Quick Start:
 Use one of the following Kaggle notebooks:
 
-https://www.kaggle.com/code/green000/light-prompter-fast-moa
+1. https://www.kaggle.com/code/green000/light-prompter-fast-moa
 
 This is an implementation of Mixture-Of-Agents from TogetherAI. Prompts were taken from https://github.com/togethercomputer/MoA.
 
 
-https://www.kaggle.com/code/green000/light-prompter-fast-self-consistency
+2. https://www.kaggle.com/code/green000/light-prompter-fast-self-consistency
 
 This is an implementation of self-consistency from https://arxiv.org/abs/2203.11171.
 
