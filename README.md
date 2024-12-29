@@ -73,3 +73,4 @@ TODO:
 
 Planned:
 1. Support more inference engines with batching out of the box such as exllama, sglang, tensorrtllm
+2. A model router for routing requests to several API's at once when batching.
