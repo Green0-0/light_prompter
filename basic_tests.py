@@ -1,11 +1,11 @@
 from model import Model
 import responder
 
-from Responders.prompt_basic import Prompt_Basic
-from Responders.prompt_twoturn import Prompt_TwoTurn
-from Responders.pickcommon_custom import PickCommon_Custom
-from Responders.aggregate_llm import Aggregate_LLM
-from Responders.critique_llm import Critique_LLM
+from responders.prompt_basic import Prompt_Basic
+from responders.prompt_twoturn import Prompt_TwoTurn
+from responders.pickcommon_custom import PickCommon_Custom
+from responders.aggregate_llm import Aggregate_LLM
+from responders.critique_llm import Critique_LLM
 
 from sane_defaults import *
 
@@ -15,7 +15,7 @@ model = Model(url="openai_url_here", api_key="api_key_here", model="model_name_h
 # Define query
 query = generate_basic_prompt("What is 10*2+156/3*2^3-sqrt(16*16)?", reread=True, planning=True, COT=True, answer_format="After reasoning, output **Answer:** in exactly that format with the asterisks, followed by the answer.")
 
-print("=== Testing Basic Responders ===")
+print("=== Testing Basic responders ===")
 # Test Prompt_Basic
 print("\n### Prompt_Basic")
 r1 = Prompt_Basic()
@@ -45,7 +45,7 @@ if resp3.verbose_output != resp3.output:
     print("Error: Verbose output does not match output; output: ", resp3.output)
 print("Answer:", resp3.answer)
 
-print("\n=== Testing Two Turn Responders ===")
+print("\n=== Testing Two Turn responders ===")
 # Test Prompt_TwoTurn
 print("\n### Prompt_TwoTurn")
 r4 = Prompt_TwoTurn()
