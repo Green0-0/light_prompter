@@ -40,7 +40,7 @@ All responders return a response which contain a verbose_output, an output, and 
 
 Within ``sane_defaults.py`` you will find starter prompts (a basic COT prompt, the aggregator prompt used for MOA, a prompt that makes the aggregator choose the best response, a critique prompt, a rewriting prompt) and some answer extractors (which take in a string and try to "extract" the LLM's answer). Note that you can pass in answer extractor to most responders to try to parse the answer out. This is important! Some strategies like self-consistency rely on having a properly parsed answer.
 
-After you have built a tree of responders, use the execute function from ``responders.py`` on the root. Make sure you have a model setup, the default in ``model.py`` is openAI compatible and thus will work with any local inference engine but is slow. The vllm variant is much preferred. You can also implement your own.
+After you have built a tree of responders, use the execute function from ``responders.py`` on the root. Make sure you have a model setup, the default in ``model.py`` is OpenAI compatible and thus will work with any local inference engine but is slow. The vLLM variant is much preferred. You can also implement your own.
 
 Basic example:
 
