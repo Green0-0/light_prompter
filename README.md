@@ -70,6 +70,7 @@ TODO:
 * it probably will not be possible to break plansearch down into a set of smaller responders like is done for MOA, as it is quite involved
 2. Create a WebUI for testing with a list of preset responder configurations
 3. Create an OpenAI compatible API
+4. Batching across many inputs
 
 Planned:
 1. Support more inference engines with batching out of the box such as exllama, sglang, tensorrtllm
