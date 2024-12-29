@@ -1,4 +1,4 @@
-# Light Prompter - Scale test-time-compute with batching! 
+# Light Prompter - Accelerate test-time-compute with batching! 
 Inspired by [optillm](https://github.com/codelion/optillm), Light Prompter is a Python framework for efficiently batching responses with prompting strategies that include multiple steps. This means that if you use an inference engine such as vLLM, you can get speedups of several magnitudes.
 
 It works through a set of ``Responder``s, each of which acts as a state machine containing nested responders. Responders request a chat completion, which gets aggregated with all other chat completions so that they can be solved in one batch. Aftewards, these chat completions are sent back down to the responders.
