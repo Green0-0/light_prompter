@@ -6,16 +6,16 @@ class Critique_LLM(Responder):
     """
     A responder that generates a response, critiques it, and then generates a new response based on the critique.
     """
-    def __init__(self, response_responder: Responder, critique_responder: Responder, refine_responder: Responder, prompt_critique: str, prompt_refine: str):
+    def __init__(self, responder: Responder, critique_responder: Responder, refine_responder: Responder, prompt_critique: str, prompt_refine: str):
         """
         Initializes a Critique_LLM object.
 
         Args:
-            response_responder (Responder): The responder to generate the initial response.
+            responder (Responder): The responder to generate the initial response.
             critique_responder (Responder): The responder to generate the critique.
             refine_responder (Responder): The responder to generate the refined response.
         """
-        self.response_responder = response_responder
+        self.responder = responder
         self.critique_responder = critique_responder
         self.refine_responder = refine_responder
         self.prompt_critique = prompt_critique
@@ -38,7 +38,7 @@ class Critique_LLM(Responder):
         self.response = None
         self.critique = None
         self.refined_response = None
-        chats = [self.response_responder.start(prompt)]
+        chats = [self.responder.start(prompt)]
         return chats
 
     def step(self, inputs: list[list[str]]) -> list[list[Chat]] | None:
@@ -52,9 +52,9 @@ class Critique_LLM(Responder):
             list[list[Chat]] | None: A list of lists of Chat objects to be completed or None if finished.
         """
         if self.response is None:
-            chats = [self.response_responder.step(inputs[0])]
+            chats = [self.responder.step(inputs[0])]
             if chats[0] is None:
-                self.response = self.response_responder.finish()
+                self.response = self.responder.finish()
                 critic_prompt = self.prompt_critique.replace("{{query}}", self.prompt).replace("{{response}}", self.response.output)
                 chats = [self.critique_responder.start(critic_prompt)]
             return chats
