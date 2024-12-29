@@ -1,5 +1,5 @@
 from typing import Any, List
-from model import Model, Chat
+from light_prompter.model import Model, Chat
 from collections import Counter
 
 class Response:

@@ -1,5 +1,5 @@
-from model import Chat
-from responder import Responder, Response
+from light_prompter.model import Chat
+from light_prompter.responder import Responder, Response
 
 
 class Critique_LLM(Responder):
