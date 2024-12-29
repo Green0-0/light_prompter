@@ -19,7 +19,7 @@ https://www.kaggle.com/code/green000/light-prompter-fast-self-consistency
 
 This is an implementation of self-consistency from https://arxiv.org/abs/2203.11171.
 
-* Feel free to edit the similarity function as you wish, but be warned the answer is not guranteed to be in the correct format.
+* Feel free to edit the similarity function as you wish, but be sure to include a case for when processing the answer fails, as it is not guranteed to be in the correct format.
 
 ## Slow Start:
 Read the examples in the examples folder. 
